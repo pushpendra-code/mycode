@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Navigation bar</title>
+    <link rel="stylesheet" href="/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+       body{
+           font-family: "Lado", sans-serif;
+       }
+       .sidenav{
+            background-image: linear-gradient(to top,pink, skyblue);
+           width:0 ;
+           height: 100%;
+           position:fixed;
+           z-index: 1;
+           top: 0;
+           left: 0;
+           padding-top: 60px;
+           overflow-x:hidden;
+          text-align: center;
+            transition: 0.5s;
+           
+
+       }
+       .sidenav a{
+           padding: 8px 8px 8px 32px;
+           display: block;
+           text-decoration: none;
+           color: #818181;
+           font-size: 25px;
+
+           transition: 0.3s;
+
+       }
+       .sidenav a:hover{
+           color:#f1f1f1;
+           background-image: linear-gradient(to right, #33ccff ,#ff99cc );
+           transition: 0.4s;
+           }
+
+       .sidenav .closebtn{
+           position:absolute;
+           top:0;
+           right: 25px;
+           font-size: 36px;
+           margin-left:50px ;
+       }
+       
+       #main{
+           transition: margin-left .5s;
+           padding: 16px;
+       }
+
+       @media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+       
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+            &times;
+        </a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#"> Contact</a>
+    </div>
+    <div id="main">
+        <h2>Sidenav Push Example</h2>
+        <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
+    
+    <span  style="font-size:30px;cursor:pointer" onclick="openNav()" &#9776 onclick="openNav()"> <i class="fa fa-bars"></i>  open</span>
+    </div>
+    
+    
+      <script>
+         function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft ="250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft ="0";
+  document.body.style.backgroundColor= "white";
+}
+      </script>
+     
+     
+</body>
+</html>
